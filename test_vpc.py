@@ -12,6 +12,31 @@ conn = boto.connect_vpc(aws_access_key_id=os.environ['ADMIN_EC2_ACCESS_KEY'],
                         port=8773,
                         path="/services/Cloud")
 
-#print conn.get_all_vpcs()
-#print conn.get_all_regions()
+
+def create_vpc():
+        cidr = raw_input("\nEnter CIDR ('10.0.0.0/24')  : ")
+        vpc = conn.create_vpc(cidr)
+        return vpc
+
+def list_vpcs():
+        return conn.get_all_vpcs()
+
+
+
+while True:
+	res = raw_input("\nEnter the action (create-vpc,list-vpcs)  : ")
+
+	if res in ['create-vpc']:
+		print create_vpc()	
+	if res in ['list-vpcs']:
+		print list_vpcs()		
+
+
+
+
+
+
+
+
+
 
