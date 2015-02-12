@@ -1,7 +1,9 @@
+
+export OS_HOST_IP=192.168.56.102
 export OS_USERNAME=admin
 export OS_PASSWORD=secret123
 export OS_TENANT_NAME=admin
-export OS_AUTH_URL=http://192.168.56.102:35357/v2.0
+export OS_AUTH_URL=http://$OS_HOST_IP:35357/v2.0
 
 
 
